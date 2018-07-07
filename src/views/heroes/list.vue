@@ -34,8 +34,7 @@
 </template>
 
 <script>
-// 导入axios、
-  import axios from 'axios';
+
     export default {
       data(){
         return {
@@ -49,7 +48,7 @@
       methods:{
         // 加载英雄列表
         loadData(){
-          axios
+          this.$http
             .get('http://localhost:3000/heroes')
             .then((res) =>{
               const {status,data} = res;
@@ -63,8 +62,8 @@
           if(!confirm('您确认要删除吗？') ){
             return;
           }
-           axios
-            .delete(`http://localhost:3000/heroes/${id}`)
+           this.$http
+            .delete(`heroes/${id}`)
             .then((res) =>{
                 if(res.status ===200){
                   // 删除成功 重新渲染列表

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-   import axios from 'axios';
 //   1、 进入编辑页面 显示当前要编辑的英雄
     // 获取url上的id--》created（）
     // 发送请求获取数据
@@ -43,8 +42,8 @@
         methods:{
         // 展示在页面上
             loadData(){
-                axios
-                    .get(`http://localhost:3000/heroes/${ this.heroId}`)
+                this.$http
+                    .get(`heroes/${ this.heroId}`)
                     .then((res) =>{
                         if(res.status === 200){
                             this.formData = res.data;
@@ -56,7 +55,7 @@
                     })
             },
             handleEdit(){
-                axios
+                this.$http
                     .put(`http://localhost:3000/heroes/${ this.heroId}`,this.formData)
                     .then((res) =>{
                         // 修改成功 跳转页面
