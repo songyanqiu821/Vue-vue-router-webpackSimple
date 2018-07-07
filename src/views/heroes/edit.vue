@@ -63,8 +63,7 @@
                         this.$router.push({name:'heroes'});
                     })
                     .catch((err) =>{
-                        console.log(err);
-                        
+                        console.log(err);                       
                     })
             }
         }

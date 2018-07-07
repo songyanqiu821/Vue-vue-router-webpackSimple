@@ -14,7 +14,7 @@ import HeroeEdit from '../views/heroes/edit.vue';
 // 创建路由对象，配置路由规则
 const router = new VueRouter({
     // 全局配置高亮
-    linkExactActiveClass:'active',
+    linkActiveClass:'active',
     routes:[
         // 配置根路径  打开默认是英雄列表页面
         // 这里使用同一个组件的话 不好 所以使用redirect:'/heroes'跳转
@@ -31,8 +31,6 @@ const router = new VueRouter({
         {name : 'heroadd', path:'/heroes/add',component:HeroeAdd },
         // 编辑路由列表
         {name : 'heroedit', path:'/heroes/edit/:id',component:HeroeEdit },
-
-
     ]
 });
 // 导出模块
