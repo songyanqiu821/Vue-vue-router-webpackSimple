@@ -34,7 +34,7 @@
 
 // 导入通用的组件
 import  AppHeader from './components/AppHeader.vue';
-import AppSiderbar from './components/AppSiderbar'
+import AppSiderbar from './components/AppSiderbar.vue';
 // ES6导出模块的语法  ====module.exporets = {}
 // webpack 支持各种模块化的语法：CommonJS AMD 、
 export default {

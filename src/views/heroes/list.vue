@@ -1,7 +1,10 @@
 <template>
     <div>
         <h2 class="sub-header">英雄列表</h2>
-          <a class="btn btn-success" href="add.html">添加</a>
+          <!-- <a class="btn btn-success" href="add.html">添加</a> -->
+          <!-- <router-link to="/heroes/add" class="btn btn-success">添加</router-link> -->
+          <!-- 使用命名路由 -->
+          <router-link  :to="{name :'heroadd'}" class="btn btn-success" >添加</router-link>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -70,7 +73,7 @@
             .catch((err) =>{
               alert('删除成功');
             })
-         }
+         },
          
       }
      
