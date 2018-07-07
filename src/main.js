@@ -8,12 +8,19 @@ import router from './routes/router';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 // 导入index.css
 import './assets/css/index.css';
-// 导入axios
-import  axios  from 'axios';
-// 设置全局的Url --->自动获取
-axios.defaults.baseURL = 'http://localhost:3000/';
-// 全局配置axios：配置所有Vue的实例都具有$http这个成员
-Vue.prototype.$http = axios;
+
+// // 导入axios
+// import  axios  from 'axios';
+// // 设置全局的Url --->自动获取
+// axios.defaults.baseURL = 'http://localhost:3000/';
+// // 全局配置axios：配置所有Vue的实例都具有$http这个成员
+// Vue.prototype.$http = axios;
+
+// 可以使用插件的方法来注册插件
+// 导入axios插件  
+import MyAxios  from '../plugins/axios';
+// 注册axios插件 内部会调用插件的install方法
+Vue.use(MyAxios);
 
 
 
