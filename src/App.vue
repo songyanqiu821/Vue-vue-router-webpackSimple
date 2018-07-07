@@ -11,10 +11,14 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
+         <router-link to="/heroes"></router-link>
+          <router-link to="/equips"></router-link>
+          <router-link to="/weapons"></router-link>
     <!-- 侧边栏 -->
     <app-siderbar></app-siderbar>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
           <!-- 渲染在页面 -->
           <router-view></router-view>
         </div>
