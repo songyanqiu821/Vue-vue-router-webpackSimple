@@ -32,10 +32,13 @@
                     .post('http://localhost:3000/heroes' ,this.formData)
                     .then((res) =>{
                         // console.log(this);
-                        // console.log(res);                       
-                        if(res.status === 201){
+                        // console.log(res);  
+                        const {status ,data } =res;                    
+                        if(status === 201){
                             // 添加成功 并跳转到英雄列表页
-                            this.$router.push('/heroes');
+                            // this.$router.push('/heroes');
+                            this.$router.push({name:'heroes'});
+
                             alert('添加成功');
                         }else{
                             alert('添加失败');

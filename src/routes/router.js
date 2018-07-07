@@ -9,7 +9,7 @@ import heroesList from '../views/heroes/list.vue';
 import equipsList from '../views/equips/list.vue';
 import weaponsList from '../views/weapons/list.vue';
 import HeroeAdd from '../views/heroes/add.vue';
-
+import HeroeEdit from '../views/heroes/edit.vue';
 
 // 创建路由对象，配置路由规则
 const router = new VueRouter({
@@ -29,6 +29,9 @@ const router = new VueRouter({
         {name : 'weapons', path:'/weapons',component: weaponsList},
         // 添加列表路由
         {name : 'heroadd', path:'/heroes/add',component:HeroeAdd },
+        // 编辑路由列表
+        {name : 'heroedit', path:'/heroes/edit/:id',component:HeroeEdit },
+
 
     ]
 });
