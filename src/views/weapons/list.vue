@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="sub-header">Weapons List</h2>
+        <h2 class="sub-header">武器列表</h2>
           <a class="btn btn-success" href="add.html">Add</a>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -214,7 +214,29 @@
 </template>
 
 <script>
-    
+    import axios from 'axios';
+    export  default {
+      data(){
+        return {
+          list:[]
+        }
+      },
+      created() {
+        this.loadData();
+      },
+      methods:{
+       loadData(){
+          axios
+          .get('http://localhost:3000/equips')
+          .then((res) =>{
+             const {status,data} = res;
+              if(status === 200){
+                this.list = data;
+              }
+          })
+       }
+      },
+    }
 </script>
 
 <style>
